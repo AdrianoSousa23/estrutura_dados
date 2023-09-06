@@ -11,13 +11,15 @@ public class Teste2 {
 //        System.out.println("qual o tamanho da fila? " + fila.tamanho());
 //        System.out.println(fila.toString());
 
-        System.out.println(fila.espiar());
-
-        if(fila.espiar() == null){
-            System.out.println("ninguel na fila");
-       }else {
-            System.out.println("o elemento da primeira posição é " + fila.espiar());
-        }
-
+//        System.out.println(fila.espiar());
+//
+//        if(fila.espiar() == null){
+//            System.out.println("ninguem na fila");
+//       }else {
+//            System.out.println("o elemento da primeira posição é " + fila.espiar());
+//        }
+        System.out.println(fila.toString());
+        System.out.println(fila.desenfileira());
+        System.out.println(fila.toString());
     }
 }
