@@ -143,16 +143,22 @@ public class ListaDuplaEncadeada {
         return  lixo.dado;
     }
     public void removeElemento(String s) throws  Exception {
+        // verifica se tem elementos na lista
         if (tamanhoLista() == 0)
             throw new Exception("a lsita esta vazia!");
         NoDuplo aux = inicio;
+        //criando uma variavel logica para controlar a exclusão
         boolean excluir = false;
+        //vamos percorrer a lista até achar o elemento
         while (aux != null && aux.dado != s){
+            //se o objeto auxiliar for igual ao valor passado pelo parametro
             if (aux.dado.equals(s)){
                 if (aux == inicio){
+                    //verifica se é a primeira posição
                     inicio = inicio.proximo;
                     excluir = true;
                 }else{
+                    //caso não seja a primeira posição
                     aux.anterior.proximo = aux.proximo;
                     aux.proximo =aux.anterior;
                     excluir = true;
@@ -161,6 +167,76 @@ public class ListaDuplaEncadeada {
             aux = aux.proximo;
         }
         if (excluir == false)
-            throw new Exception("o elemento nao foi localizado na lista");
+        //caso não encontre o elemento
+            throw new Exception("o elemento não foi localizado na lista");
     }
+    public String antecessor(String s) throws Exception {
+        //verifica se tem elementos na lista
+        if(tamanhoLista() == 0)
+        throw new Exception(" a lista está vazia!");
+        NoDuplo aux = inicio;
+        while(aux != null){
+            //verifica se o elemento é o primeiro da lista
+            if(aux.dado.equals(s)) {
+                if(aux == inicio) {
+                    throw new Exception("primeiro elemento da lista não tem Antecessor");
+                }else {
+                    return aux.anterior.dado;
+                }
+            }
+            aux = aux.proximo;
+        }
+        throw new Exception("o elemento não foi localizado na lista!");
+    }
+    public int posicao(String s) throws Exception {
+        //verifica se tem elementos na lsita
+        if(tamanhoLista() == 0)
+        throw new Exception("A lsita está vazia");
+        NoDuplo aux = inicio;
+        int contador = 0;
+        while(aux != null) {
+            if(aux.dado.equals(s)) {
+                return contador;
+            }else {
+                aux = aux.proximo;
+                contador++;
+            }
+        }
+        throw new Exception("o elemento não foi localizado na Lista!");
+    }
+    public  String BuscaPosicao(int i) throws Exception{
+        //verifica se tem elementos na lsita
+        if(tamanhoLista() == 0)
+            throw new Exception("a lista está vazia!");
+        //verifica se o paramento informado e valido
+        if(i < 0 || i > tamanhoLista())
+        //percorrer a lista ate a posição informada
+            throw new Exception("Indice invalido na lista!");
+        while(contador <= 1){
+            if (contador == i) {
+                return aux.dado;
+            }else{
+                aux = aux.proximo;
+                contador++;
+            }
+        }
+        return aux.dado;
+    }
+    public String primeiroLista() throws Exception{
+        //verifica se tem elementos na lista
+        if(tamanhoLista() == 0)
+            throw new Exception("a lista está vazia!");
+        if(tamanhoLista() != 0)
+            return inicio.dado;
+        return null;
+    }
+    public String ultimoLista() throws Exception{
+        //verifica se tem elementos na lsita
+        if(tamanhoLista() == 0)
+                throw new Exception("a lista está vazia!");
+            if(tamanhoLista() != 0)
+                return fim.dado;
+            return null;
+    }
+    
 }
