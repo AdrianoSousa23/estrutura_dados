@@ -238,5 +238,20 @@ public class ListaDuplaEncadeada {
                 return fim.dado;
             return null;
     }
-    
+    public String maior() throws Exception{
+        //verifica se tem elementos na lista
+        if(tamanhoLista() == 0)
+        throw new Exception("a lista esta vazia!");
+        NoDuplo aux = inicio;
+        String maior = aux.dado;
+        //percorrer a lista
+        while(aux != null) {
+            if(aux.dado.compareTo(maior) > 0) {
+                maior = aux.dado;
+            }else {
+                aux = aux.proximo;
+            }
+        }
+        return maior; 
+    }
 }

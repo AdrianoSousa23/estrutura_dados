@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Exemplo_Lista_Duplamente_Encadeada {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        ListaDuplaEncadeada lista = new ListaDuplaEncadeada();
+        String elemento = null;
+        String opcao = null;
+        int posicao = 0;
+
+        do {
+            System.out.println("\nEscolha a opção:\n");
+            System.out.println("1 -> adicionar elemento");
+            System.out.println("1.1 -> adicionar elemento na posição especificada");
+            System.out.println("2 -> Excluir elemento na posição especifica");
+            System.out.println("3 -> Excluir elemento");
+            System.out.println("4 -> Exibir o elemento anteirior(antessesor)");
+            System.out.println("5 -> consultar a posição de um elemento");
+            System.out.println("6 -> consuntar um elemento de uma posição");
+            System.out.println("7 -> consultar o tamanhao da Lista");
+            System.out.println("8 -> exibir o primeiro elemento da lista");
+            System.out.println("9 -> Exibir o ultimo elemento da lista");
+            System.out.println("10 -> Exibir o maior elemento da lista");
+            System.out.println("0 -> exibir a lista completa");
+            System.out.println("s -> sair da aplicação");
+
+            opcao = entrada.next();
+
+            if(opcao.equals("1")) {
+                System.out.println("\nInformar o valor do elemento");
+                elemento = entrada.next();
+                try {
+                    lista.adicionar(elemento);
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    }
+}
