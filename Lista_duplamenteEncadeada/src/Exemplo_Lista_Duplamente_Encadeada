@@ -35,8 +35,90 @@ public class Exemplo_Lista_Duplamente_Encadeada {
                 } catch (Exception e){
                     e.printStackTrace();
                 }
+            } else if(opcao.equals("1.1")){
+                System.out.println("\nInformar o valor do elemento");
+                elemento = entrada.next();
+                System.out.println("\nInformar a posição do elemento");
+                posicao = entrada.nextInt();
+                try {
+                    lista.adicionar(elemento, posicao);
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else if(opcao.equals("2")) {
+                System.out.println("\nInformar a posição do elemento");
+                posicao = entrada.next();
+                try {
+                    lista.removeIndex(posicao);
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else if(opcao.equals("3")) {
+                System.out.println("\nInformar o valor do elemento");
+                elemento = entrada.next();
+                try {
+                    lista.removeElemento(elemento);
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else if(opcao.equals("4")) {
+                System.out.println("\nInformar valor do elemento");
+                elemento = entrada.next();
+            try {
+                lista.antessesor(elemento);
+            } catch (Exception e){
+                e.printStackTrace();
+                }
+            }else if(opcao.equals("5")) {
+                System.out.println("\nInformar o valor do elemento");
+                elemento = entrada.next();
+                try {
+                    lista.posicao(elemento);
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else if(opcao.equals("6")) {
+                System.out.println("\nInformar a posição do elemento");
+                posicao = entrada.next();
+                try {
+                    lista.BuscaPosicao(posicao);
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else if(opcao.equals("7")) {
+                try {
+                    System.out.println("\no tamanho da lista é: " + lista.tamanhoLista());
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else if(opcao.equals("8")) {
+                try {
+                    lista.primeiroLista();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else if(opcao.equals("9")) {
+                try {
+                    lista.ultimoLista();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else if(opcao.equals("10")) {
+                try {
+                    lista.maior();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else if(opcao.equals("0")) {
+                try {
+                    lista.exibir();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else{
+                System.out.println("opção invalida!");
             }
-
         }
+        while(opcao != "s");
     }
 }
