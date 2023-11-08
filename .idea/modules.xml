@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Lista_duplamenteEncadeada/Lista_duplamenteEncadeada.iml" filepath="$PROJECT_DIR$/Lista_duplamenteEncadeada/Lista_duplamenteEncadeada.iml" />
+      <module fileurl="file://$PROJECT_DIR$/arvosesBinarias/arvosesBinarias.iml" filepath="$PROJECT_DIR$/arvosesBinarias/arvosesBinarias.iml" />
       <module fileurl="file://$PROJECT_DIR$/estrutura_dados.iml" filepath="$PROJECT_DIR$/estrutura_dados.iml" />
       <module fileurl="file://$PROJECT_DIR$/lista_encadeada/lista_encadeada.iml" filepath="$PROJECT_DIR$/lista_encadeada/lista_encadeada.iml" />
     </modules>
