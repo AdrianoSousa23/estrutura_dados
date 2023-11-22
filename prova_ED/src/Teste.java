@@ -58,14 +58,12 @@ public class Teste {
         grafo.adicionarAresta(38, "S", "V");
         grafo.adicionarAresta(370, "V", "A");
 
+        System.out.println("Bairro: Jardim Taquaral (Santo Amaro)");
 
+        String partida = JOptionPane.showInputDialog("Digite Qual sera seu ponto inicial: ");
+        String chegada = JOptionPane.showInputDialog("Digite Qual seta seu ponto final: ");
 
-       String partida = JOptionPane.showInputDialog("Digite Qual sera seu ponto inicial: ");
-       String chegada = JOptionPane.showInputDialog("Digite Qual seta seu ponto final: ");
-
-       grafo.encontrarCaminho(partida, chegada);
+        grafo.encontrarCaminho(partida, chegada);
 
     }
-
-
 }
