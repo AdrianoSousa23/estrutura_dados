@@ -45,6 +45,7 @@ public class Grafo <TIPO>{
         Queue<Vertice<TIPO>> fila = new LinkedList<>();
         Map<Vertice<TIPO>, Vertice<TIPO>> pai = new HashMap<>();
 
+
         fila.add(verticePartida);
         pai.put(verticePartida, null);
 
@@ -57,7 +58,7 @@ public class Grafo <TIPO>{
                 int distanciaTotal = calcularDistanciaTotal(caminho);
 
                 System.out.println("Caminho ponto a ponto: " + caminho);
-                System.out.println("Distância total em metros: " + distanciaTotal + " Metros");
+                System.out.println("Distância total: " + distanciaTotal + " Metros");
                 return;
             }
             if (atual.getArestasSaida() != null){

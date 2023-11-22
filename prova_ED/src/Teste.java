@@ -60,8 +60,8 @@ public class Teste {
 
         System.out.println("Bairro: Jardim Taquaral (Santo Amaro)");
 
-        String partida = JOptionPane.showInputDialog("Digite Qual sera seu ponto inicial: ");
-        String chegada = JOptionPane.showInputDialog("Digite Qual seta seu ponto final: ");
+        String partida = JOptionPane.showInputDialog("Digite Qual será seu ponto inicial: ");
+        String chegada = JOptionPane.showInputDialog("Digite Qual será seu ponto final: ");
 
         grafo.encontrarCaminho(partida, chegada);
 
