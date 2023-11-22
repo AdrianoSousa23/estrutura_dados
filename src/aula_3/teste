@@ -1,0 +1,45 @@
+        Queue<Vertice<TIPO>> fila = new LinkedList<>();
+        Map<Vertice<TIPO>, Vertice<TIPO>> pai = new HashMap<>();
+        List<List<Vertice<TIPO>>> caminhos = new ArrayList<>(); // Armazena os caminhos encontrados
+
+        fila.add(verticePartida);
+        pai.put(verticePartida, null);
+
+        while (!fila.isEmpty() && caminhos.size() < 2) { // Continua até encontrar dois caminhos ou a fila esvaziar
+            Vertice<TIPO> atual = fila.poll();
+
+            if (atual == verticeChegada) {
+                // Caminho encontrado, reconstrua o caminho
+                List<Vertice<TIPO>> caminho = reconstruirCaminho(verticePartida, verticeChegada, pai);
+                caminhos.add(caminho);
+            }
+
+            if (atual.getArestasSaida() != null) {
+                for (Aresta<TIPO> aresta : atual.getArestasSaida()) {
+                    Vertice<TIPO> vizinho = aresta.getFim();
+                    if (!pai.containsKey(vizinho)) {
+                        pai.put(vizinho, atual);
+                        fila.add(vizinho);
+                    }
+                }
+            }
+        }
+
+        if (caminhos.isEmpty()) {
+            System.out.println("Não foi encontrado um caminho entre os pontos.");
+        } else {
+            // Imprime os dois primeiros caminhos encontrados
+            for (int i = 0; i < Math.min(2, caminhos.size()); i++) {
+                List<Vertice<TIPO>> caminho = caminhos.get(i);
+                int distanciaTotal = calcularDistanciaTotal(caminho);
+                
+                System.out.println("Opção " + (i + 1) + ":");
+                System.out.println("Caminho ponto a ponto: " + caminho.stream().map(Vertice::toString).collect(Collectors.toList()));
+                System.out.println("Distância total em metros: " + distanciaTotal);
+                System.out.println();
+            }
+        }
+    }
+
+    // Restante do código...
+}
