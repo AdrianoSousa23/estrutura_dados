@@ -41,5 +41,9 @@ public class Vertice<TIPO> {
         this.arestasSaida.add(arresta);
     }
 
-
+    @Override
+    public String toString() {
+        return
+                "Ponto:" + dado;
+    }
 }

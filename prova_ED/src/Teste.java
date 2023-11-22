@@ -63,6 +63,8 @@ public class Teste {
        String partida = JOptionPane.showInputDialog("Digite Qual sera seu ponto inicial: ");
        String chegada = JOptionPane.showInputDialog("Digite Qual seta seu ponto final: ");
 
+       grafo.encontrarCaminho(partida, chegada);
+
     }
 
 

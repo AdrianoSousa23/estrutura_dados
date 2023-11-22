@@ -4,9 +4,6 @@ public class Aresta<TIPO> {
     private Vertice<TIPO> fim;
 
     public Aresta(int peso, Vertice<TIPO> inicio, Vertice<TIPO> fim) {
-    }
-
-    public void Aresta(int peso, Vertice<TIPO> inicio, Vertice<TIPO> fim) {
         this.peso = peso;
         this.inicio = inicio;
         this.fim = fim;
